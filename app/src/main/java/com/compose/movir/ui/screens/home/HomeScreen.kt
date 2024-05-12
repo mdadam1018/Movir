@@ -147,7 +147,7 @@ fun HomeScreen(viewModel : HomeViewModel= hiltViewModel()) {
                 if (currentMovies.isEmpty()) {
                     movieItems = emptyList()
                 } else {
-                    movieItems = currentMovies.subList(0, 4) // Assuming you still want the first 4 elements
+                    movieItems = currentMovies.subList(0, 4)
                 }
 
                 val isLoading by viewModel.isLoading.collectAsState(initial = false)
