@@ -168,7 +168,7 @@ fun HomeScreen(viewModel : HomeViewModel= hiltViewModel()) {
                 ) { index ->
                     LaunchedEffect(Unit) {
                         while (true) {
-                            delay(2000)
+                            delay(3000)
                             coroutineScope.launch {
                                 pageState.animateScrollToPage((pageState.currentPage + 1) % movieItems.size)
                             }
