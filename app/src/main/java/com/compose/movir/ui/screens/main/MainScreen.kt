@@ -1,6 +1,7 @@
 package com.compose.movir.ui.screens.main
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CircleShape
@@ -16,18 +17,22 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
+import com.compose.movir.ui.screens.home.HomeScreen
+import com.compose.movir.ui.screens.home.HomeViewModel
 
 
 @Composable
-fun MainScreen() {
+fun MainScreen(homeViewModel : HomeViewModel = hiltViewModel()) {
     Scaffold(bottomBar = {
         BottomAppBar(containerColor = Color.Transparent) {
             BottomNavBar()
-        } }
+        } },
+        containerColor = Color.Black
     ) {
 
-        alternateScreen()
+        HomeScreen(viewModel = homeViewModel)
 
     }
 
