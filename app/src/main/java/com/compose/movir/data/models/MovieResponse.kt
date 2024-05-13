@@ -1,9 +1,11 @@
 package com.compose.movir.data.models
 
-data class MovieResponse(val page: Int? = null,
-                 val results: List<MovieResult>,
-                 val total_pages: Int,
-                 val total_results: Int)
+data class MovieResponse(
+    val page: Int? = null,
+    val results: List<MovieResult>,
+    val total_pages: Int,
+    val total_results: Int
+)
 
 data class MovieResult(
     val adult: Boolean? = null,

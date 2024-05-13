@@ -65,19 +65,12 @@ import kotlinx.coroutines.launch
 @Composable
 fun HomeScreen(viewModel : HomeViewModel= hiltViewModel()) {
 
-    Box(
-        modifier = Modifier
+
+        Box(modifier = Modifier
             .fillMaxWidth()
             .fillMaxHeight(0.9f)
-            .background(Color.Black)
-
-
-    ) {
-        Box(modifier = Modifier
-            .fillMaxSize()
             .paint(
-
-                painterResource(id = R.drawable.bg_png2),
+                painterResource(id = R.drawable.background),
                 contentScale = ContentScale.FillBounds
             )
         ){
@@ -194,7 +187,7 @@ fun HomeScreen(viewModel : HomeViewModel= hiltViewModel()) {
 
 
     }
-}
+
 
 @Preview
 @Composable

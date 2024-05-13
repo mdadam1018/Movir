@@ -22,7 +22,6 @@ object AppModule {
     ) = MovieRepository(api)
 
 
-
     @Provides
     fun provideApiService(): movieAPI {
         return Retrofit.Builder()

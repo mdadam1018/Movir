@@ -1,6 +1,4 @@
-
 package com.compose.movir.ui.screens.home
-
 
 
 import androidx.compose.foundation.layout.Box
@@ -44,10 +42,8 @@ import dev.chrisbanes.haze.haze
 import dev.chrisbanes.haze.hazeChild
 
 
-
-
 @Composable
-fun MoviePager( item: MovieResult ) {
+fun MoviePager(item: MovieResult) {
 
     Box(modifier = Modifier) {
         val hazeState = remember { HazeState() }
@@ -63,17 +59,14 @@ fun MoviePager( item: MovieResult ) {
                     .haze(
                         state = hazeState,
                         style = HazeDefaults.style(
-                            tint = Color.Black.copy(alpha = 0.5f),
-                            blurRadius = 8.dp
+                            tint = Color.Black.copy(alpha = 0.5f), blurRadius = 8.dp
                         ),
                     )
-                    .align(Alignment.TopCenter),
-                shape = RoundedCornerShape(32.dp)
+                    .align(Alignment.TopCenter), shape = RoundedCornerShape(32.dp)
             ) {
                 AsyncImage(
                     model = "https://image.tmdb.org/t/p/w500${item.poster_path}",
-                    modifier = Modifier
-                        .fillMaxSize(),
+                    modifier = Modifier.fillMaxSize(),
                     contentScale = ContentScale.FillBounds,
                     contentDescription = null
                 )
@@ -90,10 +83,12 @@ fun MoviePager( item: MovieResult ) {
                         shape = RoundedCornerShape(16.dp),
                     ),
             ) {
-                Column(Modifier
-                    .fillMaxSize()
-                    .height(10.dp)
-                    .padding(vertical = 15.dp, horizontal = 15.dp)) {
+                Column(
+                    Modifier
+                        .fillMaxSize()
+                        .height(10.dp)
+                        .padding(vertical = 15.dp, horizontal = 15.dp)
+                ) {
                     Text(
                         text = "${item.title}",
                         fontFamily = kanitFamily,
@@ -119,9 +114,9 @@ fun MoviePager( item: MovieResult ) {
 
                 }
                 Row(
-                    modifier = Modifier.padding(vertical = 10.dp, horizontal = 15.dp)
-                        .align(Alignment.BottomCenter)
-                    ,
+                    modifier = Modifier
+                        .padding(vertical = 10.dp, horizontal = 15.dp)
+                        .align(Alignment.BottomCenter),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Row(
@@ -143,7 +138,7 @@ fun MoviePager( item: MovieResult ) {
                         )
                     }
                     Button(
-                        onClick = {  },
+                        onClick = { },
                         colors = ButtonDefaults.buttonColors(Gold_Bright),
                         modifier = Modifier.weight(0.7f)
                     ) {
@@ -168,22 +163,24 @@ fun MoviePager( item: MovieResult ) {
 @Preview
 @Composable
 fun MoviePagerPreview() {
-MoviePager(item = MovieResult(
-    adult = false,
-    backdrop_path = "/123.jpg",
-    genre_ids = listOf(),
-    id = 1,
-    original_language = "en",
-    original_title = "Black Adam",
-    overview = "Black Adam",
-    popularity = 1.0,
-    poster_path = "/123.jpg",
-    release_date = "2022-12-12",
-    title = "Black Adam",
-    video = false,
-    vote_average = 1.0,
-    vote_count = 1
-))
+    MoviePager(
+        item = MovieResult(
+            adult = false,
+            backdrop_path = "/123.jpg",
+            genre_ids = listOf(),
+            id = 1,
+            original_language = "en",
+            original_title = "Black Adam",
+            overview = "Black Adam",
+            popularity = 1.0,
+            poster_path = "/123.jpg",
+            release_date = "2022-12-12",
+            title = "Black Adam",
+            video = false,
+            vote_average = 1.0,
+            vote_count = 1
+        )
+    )
 }
 
 @Preview
@@ -191,6 +188,7 @@ MoviePager(item = MovieResult(
 fun MoviePagerPreview2() {
 
 }
+
 fun formatNumber(value: Double): String {
     val formattedValue = "%.1f".format(value)  // Round to one decimal place
     val withoutTrailingZeros = formattedValue.replace(Regex("\\.?0*$"), "")

@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MovirTheme {
                 window.statusBarColor = text_black.toArgb()
-                MainScreen(homeViewModel= homeViewModel)
+                MainScreen(homeViewModel = homeViewModel)
             }
         }
     }

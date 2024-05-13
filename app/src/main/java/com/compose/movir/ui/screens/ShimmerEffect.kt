@@ -34,19 +34,25 @@ fun ShimmerItem(
     contentAfterLoading: @Composable () -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    if(isLoading){
-        Box(modifier = Modifier.fillMaxWidth().height(500.dp).padding(10.dp)){
-            Box(modifier = modifier
-                .clip(shape = RoundedCornerShape(32.dp))
-                .shimmerEffect()
+    if (isLoading) {
+        Box(
+            modifier = Modifier
                 .fillMaxWidth()
                 .height(500.dp)
-                .padding(horizontal = 20.dp)){
+                .padding(10.dp)
+        ) {
+            Box(
+                modifier = modifier
+                    .clip(shape = RoundedCornerShape(32.dp))
+                    .shimmerEffect()
+                    .fillMaxWidth()
+                    .height(500.dp)
+                    .padding(horizontal = 20.dp)
+            ) {
             }
         }
 
-    }
-    else{
+    } else {
         contentAfterLoading()
     }
 }
